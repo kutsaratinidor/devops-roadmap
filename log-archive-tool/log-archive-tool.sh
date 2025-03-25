@@ -43,7 +43,7 @@ echo "📦 Archive file will be: $ARCHIVE_PATH"
 
 # === Compress Logs ===
 echo "🔄 Compressing logs from $LOG_DIR ..."
-if tar -czf "$ARCHIVE_PATH" -C "$LOG_DIR" .; then
+if tar --ignore-failed-read -czf "$ARCHIVE_PATH" -C "$LOG_DIR" . 2>> "$LOG_FILE"; then
     echo "✅ Logs compressed and saved to: $ARCHIVE_PATH"
 else
     echo "❌ Compression failed!"

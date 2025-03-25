@@ -1,4 +1,7 @@
 # Performance Server Stats 
+
+Link to https://roadmap.sh/projects/server-stats
+
 Goal of this project is to write a script to analyse server performance stats.
 Requirements
 
@@ -11,3 +14,17 @@ You are required to write a script server-stats.sh that can analyse basic server
     Top 5 processes by memory usage
 
 Stretch goal: Feel free to optionally add more stats such as os version, uptime, load average, logged in users, failed login attempts etc.
+
+### Step 1: Make the script executable
+Before running the script, you need to grant executable permission to server-stats.sh:
+
+```sh
+chmod +x server-stats.sh
+```
+
+### Step 2: Run the script
+Once the script has execution permission, you can run it using the command:
+
+```sh
+./server-stats.sh
+```

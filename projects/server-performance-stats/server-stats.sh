@@ -9,7 +9,6 @@ show_os(){
     echo "OS: $(uname -a)"
     echo "Uptime: $(uptime -p)"
     echo "Users: $(who | wc -l)"
-    echo ""
 }
 
 show_cpu(){
@@ -24,7 +23,7 @@ show_cpu(){
 }
 show_loadavg(){
     # Read the contents of /proc/loadavg, splits it by whitespace, and assigns each part to a variable.
-    read one five fifteen < /proc/loadavg
+    read one five fifteen rest < /proc/loadavg
     echo "Load Average = 1min: $one, 5min: $five, 15min: $fifteen"
     echo ""
 }
@@ -53,9 +52,11 @@ show_disk(){
 }
 
 show_failed_logins() {
+    # Use grep to get failed login attempts from auth.log"
     logfile="/var/log/auth.log" # or /var/log/secure
     echo "Top failed login sources:"
     grep "Failed password" $logfile | awk '{print $(NF-3)}' | sort | uniq -c | sort -nr | head
+    echo ""
 }
 
 main(){

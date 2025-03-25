@@ -15,6 +15,8 @@ You are required to write a script server-stats.sh that can analyse basic server
 
 Stretch goal: Feel free to optionally add more stats such as os version, uptime, load average, logged in users, failed login attempts etc.
 
+## Usage 
+
 ### Step 1: Make the script executable
 Before running the script, you need to grant executable permission to server-stats.sh:
 

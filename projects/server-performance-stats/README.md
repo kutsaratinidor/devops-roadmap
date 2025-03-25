@@ -1,6 +1,6 @@
 # Performance Server Stats 
 
-Link to https://roadmap.sh/projects/server-stats
+This project is part of [roadmap.sh](https://roadmap.sh/projects/server-stats) DevOps projects.
 
 Goal of this project is to write a script to analyse server performance stats.
 Requirements

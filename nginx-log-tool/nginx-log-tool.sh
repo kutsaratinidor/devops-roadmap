@@ -25,21 +25,21 @@ echo
 
 # === Top 5 IP addresses ===
 echo "Top 5 IP addresses:"
-awk '{print $1}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5
+awk '{print $1}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5 | awk '{print $2 " - " $1 " requests"}'
 echo
 
 # === Top 5 requested paths ===
 echo "Top 5 requested paths:"
-awk '{print $7}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5
+awk '{print $7}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5 | awk '{print $2 " - " $1 " requests"}'
 echo
 
 # === Top 5 response status codes ===
 echo "Top 5 response status codes:"
-awk '{print $9}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5
+awk '{print $9}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5 | awk '{print $2 " - " $1 " requests"}'
 echo
 
 # === Top 5 user agents ===
 echo "Top 5 user agents:"
-awk -F\" '{print $6}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5
+awk -F\" '{print $6}' "$LOGFILE" | sort | uniq -c | sort -nr | head -5 | awk '{print $2 " - " $1 " requests"}'
 echo
 

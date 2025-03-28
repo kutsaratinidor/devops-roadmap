@@ -22,13 +22,19 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
 
+    - name: Preload upload-artifact@v3 # 👈 Workaround for "missing download info"
+      uses: actions/upload-artifact@v3
+      with:
+        name: noop
+        path: README.md
+
     - name: Setup Pages
       uses: actions/configure-pages@v3
 
     - name: Upload artifact for GitHub Pages
       uses: actions/upload-pages-artifact@v1
       with:
-        path: gh-deployment-workflow # ✅ Make sure this matches actual folder
+        path: gh-deployment-workflow
 
     - name: Deploy to GitHub Pages
       id: deployment

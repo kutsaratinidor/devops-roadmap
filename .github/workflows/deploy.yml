@@ -5,9 +5,9 @@ on:
     branches:
     - main
     paths:
-    - 'gh-deployment-workflow/index.html' # Only trigger when index.html changes
+    - 'gh-deployment-workflow/index.html'
   workflow_dispatch:
-    # 👈 This enables manual trigger via GitHub UI  
+
 
 permissions:
   contents: read
@@ -25,10 +25,10 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v3
 
-    - name: Upload artifact
+    - name: Upload artifact for GitHub Pages
       uses: actions/upload-pages-artifact@v1
       with:
-        path: gh-deployment-workflow # assuming index.html is in the root
+        path: gh-deployment-workflow # ✅ Make sure this matches actual folder
 
     - name: Deploy to GitHub Pages
       id: deployment

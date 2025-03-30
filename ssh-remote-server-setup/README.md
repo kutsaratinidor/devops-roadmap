@@ -20,7 +20,7 @@ Stretch goal: install and configure fail2ban to prevent brute force attacks.
 
 ## Instructions
 
-Requirements:
+### Requirements:
 1. A remote host/vps (DigitalOcean, Linode, AWS)
 2. OpenSSH server installed on remote host
 
@@ -38,7 +38,7 @@ ssh-copy-id -i ~/.ssh/id_rsa_1st_key.pub user@server
 ssh-copy-id -i ~/.ssh/id_rsa_2nd_key.pub user@server
 ```
 
-## Method 2: Manually copy the public keys to the server
+### Method 2: Manually copy the public keys to the server
 
 Use cat to show the contents of the public key file from where it was generated:
 ```
